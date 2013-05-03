@@ -1,0 +1,200 @@
+
+NEED TO Figure Out How to Hook & Launch the Windows 7 (and Vista???) Calendar Window/Dialog.
+
+Store Configuration Data in (alternate) .ini File - As Option.
+
+REQUESTED .ini Based Portable Version.
+
+ADD Time Difference (from TClock Lite)
+
+Show Active Alarms in Context Menu
+
+NEED TO ADD/Fix Clock Face/Font(size) Recalculation when Line Number X/Y/W/H is Changed 
+
+NEED TO FIX - Switching From Single to Multi Line Format Doesn't Display
+				New Line Without First Toggling the Font Size, Why?
+	
+Can we Control T-Clock's Volume Individually...?
+
+Can we ADD - Shutdown/Startup Event/Timer Option.
+
+Add TClockEx Feature: ZZ = 3 character TimeZone Code in Custom Format String.
+	This is/was a complete and total catastrophe (May try it again later)
+
+NEED TO ADD: CommandLine /Switch Option to Mouse Click Run App X Feature.
+
+Requests: From DC Member: freaky44
+- It would be great to have the option to see the size and number of files of
+  the recycle bin in the Mouse-over Tooltip Text. (e.g. "10 Files, 135 MB").
+
+- I would love to have the option to set the action in mouse-properties to
+  "open files/folders (with command-line switches)". Just like you can do
+  it in the "Menu Item Details". Then i could empty/open the recycle bin
+  with just one click.
+
+NEED Adjustable Blink Color (and Blink Test) - Defaults cause the blink to be transparent.
+
+Request: From DC Member: mona
+- hello thanks for great program,i have Suggestions,can you add solar date (farsi)?please add this
+more about 
+Solar date
+
+also this link have great info and other link
+http://www.ozgrid.com/forum/showthread.php?t=80547&page=1
+
+also see this easy learn
+http://en.wikipedia.org/wiki/Iranian_calendars
+
+
+- thanks for great work,also so if you can add Hijri calendar ("Arabic calendar")
+  http://en.wikipedia.org/wiki/Islamic_calendar
+
+     ========= ====================================================================== ========= 
+   ========= ========================================================================== =========
+ ========= =========================== [COMPLETED OBJECTIVES] =========================== =========
+   ========= ========================================================================== =========
+     ========= ====================================================================== =========
+
+DONE - Calendar - Is Boaring as Hell.
+
+DONE - Calendar - Add Week Number and Day of Year
+
+DONE - NEED TO KiLL: Calendar (doesn't consistently) Close on Loose Focus Bugg.
+
+DONE - Fix Calendar Week Number Setting Not Retrieved From Registry on x64 Bugg
+		Bugg Reported/Found by Pascal Aloy
+
+DONE - Request From DC Member: erikts - PC Speaker Alarm Beep Option.
+
+DONE - Locking Workstation Turns Off Monitor(s) (I Just Had to Try Doing This)
+
+DONE - Make Adjustable: HKEY_CURRENT_USER\Control Panel\International\iFirstWeekOfYear
+		Total Range of Possible Correct (REG_SZ) Values is: 0, 1, or 2
+
+DONE - Requests: From DC Member: movrshakr - ADD Additional AM/PM options: a/p &  /p
+
+DONE - Calendar - Add Always On Top Option.
+
+DONE - ReEnable Middle Mouse Button Functionality.
+
+DONE - ADD Bouncing Window Option With User Configurable Message.
+
+DONE - From Sagji/DonationCoder.com - When creating an alarm it is difficult to enter the time
+		by typing in the time. In the hour field the cursor is usually at the beginning
+		(even after typing a digit) and thus any typed value is discarded. The minutes
+		field is a little better - or I was just more experienced at the field's oddities.
+
+DONE - From Tomos/DonationCoder.com - Can Taskbar be Shown, if AutoHidden During Timer/Alarm Blink.
+		Basically No ... It Cannot be Done Reliable.
+	
+DONE - Allow Hourly Chime to Chime the Current Hour i.e. 6 rings at 6:00pm (Cuckoo Clock Mode).
+
+DONE - Default Clock Text Color Should be White - So it Shows on (OS default) Black Themes.
+
+DONE - THINKING OF Conditionally Adding SNTP Back as an Option (This is an EasterEgg Only).
+
+DONE - NEED TO - Make HotKeys Configurable (e.g. Add Another Tab to Properties Dialog).
+
+DONE - ADD Day of Year? (three requests) - Required for Ordinal Date (Just do IT)
+
+DONE - NEED TO ADD Ordinal Date (YYYY.DOY) - Will Need Leading Zeros
+
+DONE - ADD Julian Date OutPut Option.
+
+DONE - More Command Line Options ... Practicle? (Yes - Added Stopwatch control)
+
+DONE - Would a hotkey to toggle visibility - "live" timer countdown interface
+		Yes - Also Added HotKeys for StopWatch & Add/Edit Timers Dialogs!
+		
+DONE - NEED TO ADD Currently Active Timers Live CountDown Display.
+
+DONE - ADD CommandLine Control of/for Stopwatch
+
+DONE - NEED TO MAKE ClearType Font Available (and Possibly Adjustable <-NOT Needed)
+
+DONE - NEED TO FIX: Hourly Chime (and possibly alarms in general) is Busted!
+
+DONE - NEED TO Fix - Size 8 Font is Too Small
+
+DONE - NEED TO USE ClearType Quality Font for Clock Face.
+     
+DONE - NEED TO Write a HELP File!!!
+
+DONE - Need to Add Week Number to Format Options.
+
+DONE - Fix Context Menu Dismissal Focus Issue
+
+DONE - Find Out Why ToolTip is Bashful (Never Shows the Second Time)
+
+DONE - Need to resolve the focus issue – double click action not firing on first run anymore.
+		This is tied to the context menu dismissal bugg (TRUE ...All 3 Buggs Fell Together!).
+
+DONE - NEED TO Restrict Stopwatch Dialog to Single Instance (Evil Psychotic Twin Issue).
+
+DONE - NEED TO Fix Can't Create 2nd Timer After First One is Launched Issue
+
+DONE - NEED TO Find Out WTF Happened to the Timer Alarm Test Button (it used to work...)
+
+DONE - ADD Proper Stopwatch With Lap Times Down to the Millisecond.
+
+DONE - NEED TO Set ALL "Currently Active Timers to FALSE on Program Start
+
+DONE - NEED TO Experiment With EmptyWorkingSet(GetCurrentProcess()); <- Test Was Successful!)
+		Running Memory Usage Now Stays Under 500K (420K x64 / 328K x86)
+
+DONE - Clean Code of UnNecessary Globals
+
+DONE - Mouse Click/Tab? Still Crashing? (See Don's Email) - *pData Needed to be NULL-ified
+			
+DONE - Need to Add Open T-Clock Properties Option to (Mouse Tab) Mouse Click Action Options
+
+DONE - Re-Enable the Transparent Taskbar Option
+
+DONE - Organize Mouse Tab for Ease of Use and Clarity
+		Mouse Buttons ID'd as: (Are the First Half of the Registry Entry Name)
+			Left:	0
+			Right:	1
+			Middle:	2
+			
+		Clicks: (Are the Second Half of the Registry Entry Name)
+			Single:	1
+			Double:	2
+
+		Action Codes: (Are the Registry Value/Data)
+			(none)					0	NULL - Either Does Nothing or Deletes Existing Entry
+			MOUSEFUNC_TIMER			5	Timer (KiLL?)
+			MOUSEFUNC_CLIPBOARD		6	Copy to Clipboard (Formatted Time String)
+			MOUSEFUNC_SCREENSAVER	7	Screen Saver
+			MOUSEFUNC_SHOWCALENDER	8	Show Calendar
+			
+		Examples:
+			01	0x00000006	=	Left / Single / Copy to Clipboard
+			02	0x00000008	=	Left / Double / Show Calendar
+			21	0x00000007	=	Left / Single / Screen Saver
+			
+DONE - Fix Toggle 12/24 Hour Setting Not Available When Custom Time Format is Used
+
+DONE - Fix AM/PM -vs- am/pm Setting Being Saved But Not Used
+
+DONE - tClock.dll Version Code Checking Routine Fails - Why?
+	
+DONE - Fix Mouse Properties Page Crashes T-Clock (and Shell...) Issue.
+
+DONE - T-Clock x64 Crashes on Load - (WTF) - Why?!?
+	oldWndProc = (WNDPROC)(LONG_PTR)GetWindowLongPtr(hwndClock, GWL_WNDPROC); // The x64 Bugg Was Here
+	// SetWindowLongPtr(hwndClock, GWL_WNDPROC, (LONG)(LONG_PTR)WndProc); <--+++----<<<<< FAIL Code!!!
+	SetWindowLongPtr(hwndClock, GWL_WNDPROC, (LONG_PTR)(LRESULT)WndProc); //----+++--> This Fixed IT!!
+	SetClassLong(hwndClock, GCL_STYLE, GetClassLong(hwndClock, GCL_STYLE) & ~CS_DBLCLKS);
+	
+			  oldWndProc = (WNDPROC)(LONG_PTR)GetWindowLongPtr(hwndClock, GWL_WNDPROC);
+			//==================================================================================
+			#if defined _M_IX86 //---------------+++--> IF Compiling This as a 32-bit Clock Use:
+			  SetWindowLongPtr(hwndClock, GWL_WNDPROC, (LONG)(LRESULT)WndProc);
+
+			//==================================================================================
+			#else //-------------------+++--> ELSE Assume: _M_X64 - IT's a 64-bit Clock and Use:
+			  SetWindowLongPtr(hwndClock, GWL_WNDPROC, (LONG_PTR)(LRESULT)WndProc);
+
+			#endif //--+++--> This is the Code That Was Finally Used to Completely Resolve Bugg.
+			//==================================================================================
+			 SetClassLong(hwndClock, GCL_STYLE, GetClassLong(hwndClock, GCL_STYLE) & ~CS_DBLCLKS);

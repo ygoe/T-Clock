@@ -1,0 +1,8 @@
+LIBRARY	"tClock"
+
+SECTIONS
+.MYDATA    SHARED READ WRITE
+
+EXPORTS
+HookStart
+HookEnd
