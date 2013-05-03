@@ -533,6 +533,84 @@ void MakeFormat(char* s, SYSTEMTIME* pt, int beat100, char* fmt) { //-----------
 				while(*Wk) *dp++ = *Wk++;
 				sp++;
 			}
+			else if(*(sp + 1) == 'i') { // Week ISO-8601 (by henriko.se)
+				int ISOWeek;
+				struct tm *ptrtmLocalTime;
+				struct tm tmCurrentTime;
+				struct tm tmStartOfCurrentYear;
+				ptrtmLocalTime = localtime(&ltime);
+				tmCurrentTime = *ptrtmLocalTime;
+				mktime(&tmCurrentTime);
+				if(tmCurrentTime.tm_wday == 0)
+				{
+					tmCurrentTime.tm_wday = 7;
+				}
+				tmStartOfCurrentYear.tm_year = tmCurrentTime.tm_year;
+				tmStartOfCurrentYear.tm_mon = 1 - 1;
+				tmStartOfCurrentYear.tm_mday = 1;
+				tmStartOfCurrentYear.tm_hour = 0;
+				tmStartOfCurrentYear.tm_min = 0;
+				tmStartOfCurrentYear.tm_sec = 0;
+				tmStartOfCurrentYear.tm_isdst = 0;
+				mktime(&tmStartOfCurrentYear);
+				if(tmStartOfCurrentYear.tm_wday == 0)
+				{
+					tmStartOfCurrentYear.tm_wday = 7;
+				}
+				ISOWeek = (tmCurrentTime.tm_yday + (tmStartOfCurrentYear.tm_wday - 1)) / 7 + (tmStartOfCurrentYear.tm_wday <= 4 ? 1 : 0); 
+				if(ISOWeek == 0)
+				{
+					struct tm tmStartOfLastYear;
+					struct tm tmEndOfLastYear;
+					tmStartOfLastYear.tm_year = tmCurrentTime.tm_year - 1;
+					tmStartOfLastYear.tm_mon = 1 - 1;
+					tmStartOfLastYear.tm_mday = 1;
+					tmStartOfLastYear.tm_hour = 0;
+					tmStartOfLastYear.tm_min = 0;
+					tmStartOfLastYear.tm_sec = 0;
+					tmStartOfLastYear.tm_isdst = 0;
+					mktime(&tmStartOfLastYear);
+					if(tmStartOfLastYear.tm_wday == 0)
+					{
+						tmStartOfLastYear.tm_wday = 7;
+					}
+					tmEndOfLastYear.tm_year = tmCurrentTime.tm_year - 1;
+					tmEndOfLastYear.tm_mon = 12 - 1;
+					tmEndOfLastYear.tm_mday = 31;
+					tmEndOfLastYear.tm_hour = 0;
+					tmEndOfLastYear.tm_min = 0;
+					tmEndOfLastYear.tm_sec = 0;
+					tmEndOfLastYear.tm_isdst = 0;
+					mktime(&tmEndOfLastYear);
+					ISOWeek = (tmEndOfLastYear.tm_yday + (tmStartOfLastYear.tm_wday - 1)) / 7 + (tmStartOfLastYear.tm_wday <= 4 ? 1 : 0); 
+				}
+				if(tmCurrentTime.tm_mon == 12 - 1 && tmCurrentTime.tm_mday >= 29) {
+					if(tmCurrentTime.tm_wday <= 3)
+					{
+						struct tm tmStartOfNextYear;
+						tmStartOfNextYear.tm_year = tmCurrentTime.tm_year + 1;
+						tmStartOfNextYear.tm_mon = 1 - 1;
+						tmStartOfNextYear.tm_mday = 1;
+						tmStartOfNextYear.tm_hour = 0;
+						tmStartOfNextYear.tm_min = 0;
+						tmStartOfNextYear.tm_sec = 0;
+						tmStartOfNextYear.tm_isdst = 0;
+						mktime(&tmStartOfNextYear);
+						if(tmStartOfNextYear.tm_wday == 0)
+						{
+							tmStartOfNextYear.tm_wday = 7;
+						}
+						if(tmStartOfNextYear.tm_wday <= 4)
+						{
+							ISOWeek = 1;
+						}
+					}
+				}
+				wsprintf(szWkNum, "%d", ISOWeek);
+				Wk = szWkNum;
+				while(*Wk) *dp++ = *Wk++;
+				sp++;
+			}
 			// Need DOY + 6 / 7 (as float) DO NOT ROUND - Done!
 			else if(*(sp + 1) == 'w') { // SWN (Simple Week Number)
 					double dy; int d, s;
